@@ -1,1 +1,15 @@
 /* My CSS here */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  height: 8%;
+  text-align: center;
+}
+
+#content {
+  height: 92%;
+  width: 100%;
+}

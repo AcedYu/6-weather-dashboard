@@ -7,8 +7,35 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
+    <header class = "card-header text-white bg-dark">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <!-- the aside section containing the search bar and past viewed history list -->
+    <div class = "row" id = "content">
+      <aside id = "cities" class = "col-2 pl-4 border-right bg-light">
+        <h2>Search for a City:</h2>
+        <form id = "searchbar" class = "form-inline">
+          <div class="form-group mr-sm-1 mb-2">
+            <input id = "city-search" type = "text" class = "form-control"/>
+          </div>
+          <button type="submit" class = "btn btn-primary mb-2">🔍</button>
+        </form>
+        <ul id = "search-history">
+        </ul>
+      </aside>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <div class = "col-10">
+        <!-- section containing the current city's weather data for the day -->
+        <section id = "weather-display" class = "container"></section>
+
+        <!-- section containing the current city's 5 day forecast -->
+        <section id = "forecast" class = "container"></section>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
