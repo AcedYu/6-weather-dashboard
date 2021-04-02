@@ -30,6 +30,7 @@ It contains notable features such as:
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://api.jquery.com/)
 * [OpenWeather API](https://openweathermap.org/api)
+* [moment.js](https://momentjs.com/)
 
 ## Deployed Link
 

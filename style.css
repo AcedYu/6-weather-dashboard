@@ -13,3 +13,29 @@ header {
   height: 92%;
   width: 100%;
 }
+
+form {
+  display: inline-block;
+}
+/* weather-display css outside of bootstrap */
+#weather-display {
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+#weather-display p {
+  font-size: 22px;
+}
+
+#weather-display li {
+  font-size: 22px;
+}
+
+/* color classes not in bootstrap */
+.orange {
+  background-color: orange;
+}
+
+.violet {
+  background-color: darkviolet;
+}
