@@ -88,11 +88,11 @@ var renderForecast = (city) => {
 
     // Create element
     var forecastEntry = $(`
-    <div class="card text-white bg-primary mb-3 col m-2" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3 col m-3" style="max-width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">${date}</h5>
         <img src="${iconURL}">
-        <p class="card-text">Temperature: ${temperature} °F</p>
+        <p class="card-text">Temp: ${temperature} °F</p>
         <p class="card-text">Humidity: ${humidity}%</p>
       </div>
     </div>
@@ -130,15 +130,43 @@ var renderUVIndex = (index) => {
 }
 
 // Define our search history as a global variable
-var searched =[];
+var searched = JSON.parse(localStorage.getItem("searches"));
+if (!searched) {
+  searched = [];
+}
 // Search history function
 var addHistory = (city) => {
-  console.log(city);
+  // If duplicate is found, do not add it to history again.
+  for (var i = 0; i < searched.length; i++) {
+    if (city === searched[i]) {
+      return;
+    }
+  }
+  // Add new items to the front of the array, similarly to how browser organizes it for history
+  searched.unshift(city);
+  localStorage.setItem("searches", JSON.stringify(searched));
+  renderList();
 }
 
+// Render List function
+var renderList = () => {
+  searchHistory.empty();
+  for (var i = 0; i < searched.length; i++) {
+    var li = $(`<li class="list-group-item">${searched[i]}</li>`);
+    li.on('click', (event) => {
+      var target = $(event.target);
+      getWeather(target.text());
+    });
+    searchHistory.append(li);
+  }
+}
 // searchForm on submit event listener
 searchForm.on('submit', (event) => {
   event.preventDefault();
   var city = searchQuery.val();
+  searchQuery.val('');
   getWeather(city);
 });
+
+// initialize with the list rendered
+renderList();

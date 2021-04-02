@@ -14,9 +14,12 @@ header {
   width: 100%;
 }
 
-form {
-  display: inline-block;
+/* on hover effects for search history list items */
+aside ul li:hover{
+  cursor: pointer;
+  background-color: rgb(214, 242, 255);
 }
+
 /* weather-display css outside of bootstrap */
 #weather-display {
   margin-top: 1%;

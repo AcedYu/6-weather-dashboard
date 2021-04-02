@@ -22,6 +22,10 @@ It contains notable features such as:
   - clicking a city in the history bar will display the city's weather data
   - city viewing history will save in the browser's local storage
 
+![Image](demo.png)
+
+Due: Monday, April 5, 2021 11:59 PM
+
 ## Built With
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
