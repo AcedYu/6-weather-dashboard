@@ -3,22 +3,23 @@
 var searchHistory = $('#search-history');
 var weatherDisplay = $('#weather-display');
 var forecastDisplay = $('#forecast');
-// Initialize the weather dashboard function. I'll set the default city to Berkeley
-var init = () => {
-  getWeather('San Francisco');
-}
+var searchForm = $('form');
+var searchQuery = $('input[name = "city-search"]');
 
+// getWeather api call function
 var getWeather = (city) => {
   var weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=caf23bfda5d554d1a104091b1f51e063&units=imperial`;
   $.ajax({
     url: weatherApi,
     method: 'GET',
-    error: () => console.log("The process for grabbing weather data has failed.")
+    error: () => alert("Please input a valid city name.")
   }).then(function (response) {
     renderWeather(response)
+    addHistory(response.name);
   });
 }
 
+// getForecast api call function
 var getForecast = (lat, lon) => {
   var forecastApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=caf23bfda5d554d1a104091b1f51e063&units=imperial`;
   $.ajax({
@@ -44,7 +45,8 @@ var getUVIndex = (lat, lon) => {
 
 // render weather data function
 var renderWeather = (city) => {
-  console.log(city);
+  weatherDisplay.empty();
+  forecastDisplay.empty();
   // turn the unix formatted date into a more standard format
   var date = moment.unix(city.dt).format("(M/D/YYYY)");
   // obtain the URL for the weather icon
@@ -127,5 +129,12 @@ var renderUVIndex = (index) => {
   weatherDisplay.append(uvi);
 }
 
-// intialize
-init();
+var addHistory = (city) => {
+  console.log(city);
+}
+
+searchForm.on('submit', (event) => {
+  event.preventDefault();
+  var city = searchQuery.val();
+  getWeather(city);
+});
