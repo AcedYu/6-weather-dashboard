@@ -129,10 +129,14 @@ var renderUVIndex = (index) => {
   weatherDisplay.append(uvi);
 }
 
+// Define our search history as a global variable
+var searched =[];
+// Search history function
 var addHistory = (city) => {
   console.log(city);
 }
 
+// searchForm on submit event listener
 searchForm.on('submit', (event) => {
   event.preventDefault();
   var city = searchQuery.val();
