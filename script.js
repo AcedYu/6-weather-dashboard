@@ -50,7 +50,7 @@ var renderWeather = (city) => {
   // turn the unix formatted date into a more standard format
   var date = moment.unix(city.dt).format("(M/D/YYYY)");
   // obtain the URL for the weather icon
-  var iconURL = `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
+  var iconURL = `https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
   // obtain the UV index which needs another API call to obtain.
   var lat = city.coord.lat;
   var lon = city.coord.lon;
@@ -82,7 +82,7 @@ var renderForecast = (city) => {
   for (var i = 1; i <= 5; i++) {
     // Define our necessary data
     var date = moment.unix(city.daily[i].dt).format("M/D/YYYY");
-    var iconURL = `http://openweathermap.org/img/wn/${city.daily[i].weather[0].icon}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${city.daily[i].weather[0].icon}@2x.png`
     var temperature = city.daily[i].temp.day;
     var humidity = city.daily[i].humidity;
 
