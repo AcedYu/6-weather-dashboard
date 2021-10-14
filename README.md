@@ -1,6 +1,5 @@
 # 6-weather-dashboard
-This assignment was assigned by the U.C. Berkeley Extension Full-time Full Stack Flex Boot Camp.
-This is assignment 6 for the program. In this assignment I created a weather dashboard viewing application. The application consists of creating a navigatable dashboard that allows the user to view the weather data. The app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript code. It has a clean, polished, and responsive user interface. It uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities.
+In this project I created a weather dashboard viewing application. The application consists of creating a navigatable dashboard that allows the user to view the weather data. The app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript code. It has a clean, polished, and responsive user interface. It uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities.
 
 It contains notable features such as:
 - a searchbar connected to the OpenWeather API to search for cities.
@@ -43,4 +42,3 @@ Due: Monday, April 5, 2021 11:59 PM
 ## Authors
 AcedYu
 - [Link to Github](https://github.com/AcedYu)
-- [Link to LinkedIn](https://www.linkedin.com/in/alex-yu-3712811b9/)
