@@ -38,7 +38,3 @@ Due: Monday, April 5, 2021 11:59 PM
 ## Deployed Link
 
 * [See Live Site](https://acedyu.github.io/6-weather-dashboard/)
-
-## Authors
-AcedYu
-- [Link to Github](https://github.com/AcedYu)
